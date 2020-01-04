@@ -7,10 +7,17 @@ Created on Sat Jan  4 15:04:31 2020
 
 GUGDAN_MAX_NUMBER = 13
 
-start = int(input("Input start number\n"))
-end = int(input("Input end number\n"))
+input_str = input("Input two numbers\n")
 
-for i in range(start, end + 1):
+start, end = input_str.split(' ')
+start = int(start)
+end = int(end)
+
+change = 1
+if(start > end):
+    change = -1
+
+for i in range(start, end + change, change):
     for j in range(GUGDAN_MAX_NUMBER):
         print("%d x %d = %d" % (i, j, i * j))
     print();
