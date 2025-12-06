@@ -16,8 +16,6 @@ def main() -> None:
     N, B = intify(lines[0])
     matrix: list[list[int]] = [*map(intify, lines[1:])]
 
-    print("test")
-
     Matrix.MOD = 1000
     modmat = Matrix(matrix)
 

@@ -45,8 +45,22 @@ class Pair(tuple[int, int]):
 
 
 def main() -> None:
-    # 구현하세요!
-    pass
+    input = sys.stdin.readline
+
+    size = 404040
+    n = int(input())
+    a = list(map(int, input().split()))
+    
+    tree = SegmentTree(1, 1, n, size)
+    
+    m = int(input())
+    for query in range(m):
+        q, i, j = map(int, input().split())
+        if q == 1:
+            tree.update(1, 1, n, i, j)
+        else:
+            ret = tree.get_ans(1, i, j, 1, n)
+            print(ret[0] + ret[1])
 
 
 if __name__ == "__main__":

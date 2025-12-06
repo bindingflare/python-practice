@@ -32,8 +32,22 @@ def count(trie: Trie, query_seq: str) -> int:
 
 
 def main() -> None:
-    # 구현하세요!
-    pass
+    while True:
+        t = Trie()
+        words = []
+        try: N = int(sys.stdin.readline())
+        except: break
+
+        for _ in range(N):
+            s = sys.stdin.readline().rstrip()
+            t.push(s)
+            words.append(s)
+        result = 0
+        #print(t)
+        for word in words:
+            result += t.contains(word)
+
+        print("%.2f" % (result/N))
 
 
 if __name__ == "__main__":
